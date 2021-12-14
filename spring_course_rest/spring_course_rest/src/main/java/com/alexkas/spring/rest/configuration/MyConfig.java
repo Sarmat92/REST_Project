@@ -21,7 +21,6 @@ public class MyConfig {
 
     @Bean
     public DataSource dataSource() {
-
         ComboPooledDataSource dataSource = new ComboPooledDataSource();
         try {
             dataSource.setDriverClass("com.mysql.cj.jdbc.Driver");
