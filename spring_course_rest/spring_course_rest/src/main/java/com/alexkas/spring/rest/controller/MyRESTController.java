@@ -33,22 +33,4 @@ public class MyRESTController {
         }
         return employee;
     }
-
-    @ExceptionHandler
-    public ResponseEntity<EmployeeIncorrectDate> handleException(NoSuchEmployeeException exception) {
-
-        EmployeeIncorrectDate date = new EmployeeIncorrectDate();
-        date.setInfo(exception.getMessage());
-
-        return new ResponseEntity<>(date, HttpStatus.NOT_FOUND);
-    }
-
-    @ExceptionHandler
-    public ResponseEntity<EmployeeIncorrectDate> handleAllException(Exception exception) {
-
-        EmployeeIncorrectDate date = new EmployeeIncorrectDate();
-        date.setInfo(exception.getMessage());
-
-        return new ResponseEntity<>(date, HttpStatus.BAD_REQUEST);
-    }
 }
